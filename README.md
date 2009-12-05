@@ -46,7 +46,7 @@ gets turned into this JSON:
 
 ### Installation
 
-`sudo gem install csv2json --source gemcutter.org`
+`sudo gem install csv2json --source http://gemcutter.org`
 
 ### Usage
 
