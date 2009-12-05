@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'rake'
-require File.join(File.expand_path(File.dirname(__FILE__)), 'lib', 'csv2json.rb')
+require File.join(File.expand_path(File.dirname(__FILE__)), 'lib', 'csv2json-version.rb')
 
 begin
   require 'jeweler'
@@ -12,6 +12,8 @@ begin
     gem.email = "antonin@hildebrand.cz"
     gem.homepage = "http://github.com/darwin/csv2json"
     gem.authors = ["Antonin Hildebrand"]
+    gem.add_dependency "json"
+    gem.add_dependency "fastercsv"
     gem.add_development_dependency "shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

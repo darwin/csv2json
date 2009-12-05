@@ -1,9 +1,9 @@
 require 'fastercsv'
 require 'json'
+require 'csv2json-version.rb'
 
 module CSV2JSON
-    VERSION = "0.1.0"
-    
+
     # convert an input string value to integer or float if applicable
     def convert(val)
         return Integer(val) if val.to_i.to_s == val
