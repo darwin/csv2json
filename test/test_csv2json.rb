@@ -7,7 +7,6 @@ class TestCsv2json < Test::Unit::TestCase
         Dir.chdir(fixtures_dir) do
             Dir.glob('*.csv') do |filename|
                 json_template = File.basename(filename, ".csv")+'.json'
-                print json_template
                 File.open(filename, "r") do |input|
                     output = StringIO.new()
                     CSV2JSON.parse(input, output)

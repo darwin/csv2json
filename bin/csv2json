@@ -9,7 +9,7 @@ module CSV2JSONRunner
     
     # command-line parsing
     COMMAND = File.basename($0)
-    USAGE = "Usage: #{COMMAND} [OPTIONS]"
+    USAGE = "Usage: #{COMMAND} [INPUT] [OPTIONS]"
 
     options = OpenStruct.new
     options.output = "-"
@@ -29,7 +29,7 @@ module CSV2JSONRunner
         end
 
         o.on_tail("-v", "--version", "Show version") do
-            puts "0.1.0" # TODO
+            puts CSV2JSON::VERSION
             exit
         end
     end

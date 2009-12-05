@@ -1,12 +1,14 @@
 require 'rubygems'
 require 'rake'
+require File.join(File.expand_path(File.dirname(__FILE__)), 'lib', 'csv2json.rb')
 
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
+    gem.version = CSV2JSON::VERSION
     gem.name = "csv2json"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{.csv to .json converter}
+    gem.description = %Q{handy for converting xls files to json}
     gem.email = "antonin@hildebrand.cz"
     gem.homepage = "http://github.com/darwin/csv2json"
     gem.authors = ["Antonin Hildebrand"]

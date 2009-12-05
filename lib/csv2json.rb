@@ -2,6 +2,7 @@ require 'fastercsv'
 require 'json'
 
 module CSV2JSON
+    VERSION = "0.1.0"
     
     # convert an input string value to integer or float if applicable
     def convert(val)

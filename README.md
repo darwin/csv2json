@@ -48,7 +48,18 @@ gets turned into this JSON:
 
 `sudo gem install csv2json --source gemcutter.org`
 
+=== Usage
+
+    Usage: csv2json [INPUT] [OPTIONS]
+
+    Specific options:
+        -o, --output FILE                Write output to a file
+        -h, --help                       Show this message
+        -v, --version                    Show version
+
 === Alternative usage
+
+common usage is `csv2json file.csv > file.json`
 
 csv2json should behave like proper unix command-line utility working with pipes, redirects, etc.
 
