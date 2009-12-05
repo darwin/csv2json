@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "bin/csv2json",
+     "csv2json.gemspec",
      "lib/csv2json-version.rb",
      "lib/csv2json.rb",
      "test/fixtures/addresses.csv",
