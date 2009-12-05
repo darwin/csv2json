@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require 'optparse'
+require 'ostruct'
+require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json.rb') # this form is important for local development
+
+module CSV2JSONRunner
+    
+    # command-line parsing
+    COMMAND = File.basename($0)
+    USAGE = "Usage: #{COMMAND} [OPTIONS]"
+
+    options = OpenStruct.new
+    options.output = "-"
+
+    opts = OptionParser.new do |o|
+        o.banner = USAGE
+        o.separator ""
+        o.separator "Specific options:"
+
+        o.on("-o", "--output FILE", "Write output to a file") do |fn|
+            options.output = fn
+        end
+
+        o.on_tail("-h", "--help", "Show this message") do
+            puts o
+            exit
+        end
+
+        o.on_tail("-v", "--version", "Show version") do
+            puts "0.1.0" # TODO
+            exit
+        end
+    end
+
+    begin
+        opts.parse!(ARGV)
+    rescue
+        die "Unable to parse options: #{$!}"
+    end
+
+    # initialize output handle
+    if options.output == "-"
+        OUT = $stdout.clone
+    else
+        OUT = File.open(options.output, "w")
+    end
+    
+    if ARGV.size > 0
+        IN = File.open(ARGV[0], "r")
+    else
+        IN = StringIO.new($stdin.read) # cannot be just $stdin.clone because FasterCSV is seeking in file :-(
+    end
+    
+    # run the command
+    CSV2JSON.parse(IN, OUT)
+    
+    # leave in peace
+    OUT.flush
+end

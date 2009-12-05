@@ -10,7 +10,7 @@ begin
     gem.email = "antonin@hildebrand.cz"
     gem.homepage = "http://github.com/darwin/csv2json"
     gem.authors = ["Antonin Hildebrand"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
