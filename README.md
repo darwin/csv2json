@@ -1,15 +1,15 @@
-= csv2json
+# csv2json
 
 Clients were sending me XLS files, but my webs consume JSON. So I needed to convert them to JSON easily from command-line. 
 Tried to google for solution and surprisingly enough nothing solid existed.
 
-== Solution
+## Solution
 
 - export XLS as a CSV file (I use OpenOffice.org for this)
 - run `csv2json file.csv > file.json`
 - there is no step 3
 
-=== Sample
+### Sample
 
 note: make sure your XLS table has the first row with column names
 
@@ -44,11 +44,11 @@ gets turned into this JSON:
       }
     ]
 
-=== Installation
+### Installation
 
 `sudo gem install csv2json --source gemcutter.org`
 
-=== Usage
+### Usage
 
     Usage: csv2json [INPUT] [OPTIONS]
 
@@ -57,7 +57,7 @@ gets turned into this JSON:
         -h, --help                       Show this message
         -v, --version                    Show version
 
-=== Alternative usage
+### Alternative usage
 
 common usage is `csv2json file.csv > file.json`
 
@@ -65,7 +65,7 @@ csv2json should behave like proper unix command-line utility working with pipes,
 
 `cat file.csv | csv2json | gzip > file.json.gz`
 
-=== Usage as a library
+### Usage as a library
 
 with files
 
@@ -88,7 +88,7 @@ or in-memory
     output.pos = 0
     puts output.read
 
-== Want to contribute?
+## Want to contribute?
  
 * Fork the project.
 * Make your feature addition or bug fix.
@@ -98,7 +98,7 @@ or in-memory
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2009 Antonin Hildebrand. See LICENSE for details.
 
