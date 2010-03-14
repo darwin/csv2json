@@ -13,11 +13,16 @@ module CSV2JSONRunner
 
     options = OpenStruct.new
     options.output = "-"
+    options.separator = ","
 
     opts = OptionParser.new do |o|
         o.banner = USAGE
         o.separator ""
         o.separator "Specific options:"
+
+        o.on("-s", "--separator SEP", "Set separator character surrounded by single quotes (default is ',')") do |sep|
+            options.separator = sep
+        end
 
         o.on("-o", "--output FILE", "Write output to a file") do |fn|
             options.output = fn
@@ -54,7 +59,7 @@ module CSV2JSONRunner
     end
     
     # run the command
-    CSV2JSON.parse(IN, OUT)
+    CSV2JSON.parse(IN, OUT, nil, :col_sep => options.separator)
     
     # leave in peace
     OUT.flush

@@ -53,6 +53,7 @@ gets turned into this JSON:
     Usage: csv2json [INPUT] [OPTIONS]
 
     Specific options:
+        -s, --separator SEP              Set separator character surrounded by single quotes (default is ',')
         -o, --output FILE                Write output to a file
         -h, --help                       Show this message
         -v, --version                    Show version

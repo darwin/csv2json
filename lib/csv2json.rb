@@ -11,10 +11,10 @@ module CSV2JSON
     end
 
     # input and output are file objects, you can use StringIO if you want to work in memory
-    def parse(input, output, headers=nil)
+    def parse(input, output, headers=nil, options={})
         result = Array.new
 
-        FasterCSV.new(input).each do |row|
+        FasterCSV.new(input, options).each do |row|
             # treat first row as headers if the caller didn't provide them
             unless headers 
                 headers = row
