@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{csv2json}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Antonin Hildebrand"]
-  s.date = %q{2009-12-05}
+  s.authors = ["Antonin Hildebrand", "Rafael Souza"]
+  s.date = %q{2010-03-14}
   s.default_executable = %q{csv2json}
   s.description = %q{handy for converting xls files to json}
   s.email = %q{antonin@hildebrand.cz}
@@ -28,19 +28,25 @@ Gem::Specification.new do |s|
      "csv2json.gemspec",
      "lib/csv2json-version.rb",
      "lib/csv2json.rb",
-     "test/fixtures/addresses.csv",
      "test/fixtures/addresses.json",
-     "test/fixtures/photos.csv",
+     "test/fixtures/addresses_comma.csv",
+     "test/fixtures/addresses_pipe.csv",
+     "test/fixtures/addresses_semicolon.csv",
      "test/fixtures/photos.json",
-     "test/fixtures/population.csv",
+     "test/fixtures/photos_comma.csv",
+     "test/fixtures/photos_pipe.csv",
+     "test/fixtures/photos_semicolon.csv",
      "test/fixtures/population.json",
+     "test/fixtures/population_comma.csv",
+     "test/fixtures/population_pipe.csv",
+     "test/fixtures/population_semicolon.csv",
      "test/helper.rb",
      "test/test_csv2json.rb"
   ]
   s.homepage = %q{http://github.com/darwin/csv2json}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{.csv to .json converter}
   s.test_files = [
     "test/helper.rb",
