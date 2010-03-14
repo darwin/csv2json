@@ -11,7 +11,7 @@ begin
     gem.description = %Q{handy for converting xls files to json}
     gem.email = "antonin@hildebrand.cz"
     gem.homepage = "http://github.com/darwin/csv2json"
-    gem.authors = ["Antonin Hildebrand"]
+    gem.authors = ["Antonin Hildebrand", "Rafael Souza"]
     gem.add_dependency "json"
     gem.add_dependency "fastercsv"
     gem.add_development_dependency "shoulda", ">= 0"
