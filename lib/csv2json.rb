@@ -21,6 +21,11 @@ module CSV2JSON
                 headers = row
                 next
             end
+
+            if gemOptions[:skipFirstRow] then
+                gemOptions[:skipFirstRow] = false
+                next
+            end
             
             # build JSON snippet and append it to the result
             snippet = Hash.new

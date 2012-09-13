@@ -15,6 +15,8 @@ module CSV2JSONRunner
     options.output = "-"
     options.separator = ","
     options.pretty = false
+    options.headers = nil
+    options.skipFirstRow = false
 
     opts = OptionParser.new do |o|
         o.banner = USAGE
@@ -31,6 +33,19 @@ module CSV2JSONRunner
 
         o.on("-p", "--pretty", "Pretty-format JSON output") do 
             options.pretty = true
+        end
+
+        o.on("-H", "--force-headers HEADERS", "Supply list of headers, and skip first row of input; use to override headers in file") do |headers|
+            if headers then
+                options.headers = headers.split(",")
+                options.skipFirstRow = true
+            end
+        end
+
+        o.on("-h", "--headers HEADERS", "Supply list of headers, where no headers exist in the file") do |headers|
+            if headers then
+                options.headers = headers.split(",")
+            end
         end
 
         o.on_tail("-h", "--help", "Show this message") do
@@ -64,7 +79,7 @@ module CSV2JSONRunner
     end
     
     # run the command
-    CSV2JSON.parse(IN, OUT, nil, {:col_sep => options.separator}, {:pretty => options.pretty})
+    CSV2JSON.parse(IN, OUT, options.headers, {:col_sep => options.separator}, {:pretty => options.pretty, :skipFirstRow => options.skipFirstRow})
     
     # leave in peace
     OUT.flush
