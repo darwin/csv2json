@@ -6,7 +6,7 @@ require 'ostruct'
 require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json.rb') # this form is important for local development
 
 module CSV2JSONRunner
-    
+
     # command-line parsing
     COMMAND = File.basename($0)
     USAGE = "Usage: #{COMMAND} [INPUT] [OPTIONS]"
@@ -14,6 +14,7 @@ module CSV2JSONRunner
     options = OpenStruct.new
     options.output = "-"
     options.separator = ","
+    options.pretty = false
 
     opts = OptionParser.new do |o|
         o.banner = USAGE
@@ -26,6 +27,10 @@ module CSV2JSONRunner
 
         o.on("-o", "--output FILE", "Write output to a file") do |fn|
             options.output = fn
+        end
+
+        o.on("-p", "--pretty", "Pretty-format JSON output") do 
+            options.pretty = true
         end
 
         o.on_tail("-h", "--help", "Show this message") do
@@ -59,7 +64,7 @@ module CSV2JSONRunner
     end
     
     # run the command
-    CSV2JSON.parse(IN, OUT, nil, :col_sep => options.separator)
+    CSV2JSON.parse(IN, OUT, nil, {:col_sep => options.separator}, {:pretty => options.pretty})
     
     # leave in peace
     OUT.flush

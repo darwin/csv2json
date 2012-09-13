@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'fastercsv'
 require 'json'
 require 'csv2json-version.rb'
@@ -11,10 +12,10 @@ module CSV2JSON
     end
 
     # input and output are file objects, you can use StringIO if you want to work in memory
-    def parse(input, output, headers=nil, options={})
+    def parse(input, output, headers=nil, csvOptions={}, gemOptions={})
         result = Array.new
 
-        FasterCSV.new(input, options).each do |row|
+        FasterCSV.new(input, csvOptions).each do |row|
             # treat first row as headers if the caller didn't provide them
             unless headers 
                 headers = row
@@ -27,7 +28,12 @@ module CSV2JSON
             result << snippet
         end
         
-        output << JSON.pretty_generate(result)
+        if gemOptions[:pretty] == true then
+            output << JSON.pretty_generate(result)
+        else
+            output << JSON.generate(result)
+        end
+
     end
     
     module_function :parse
