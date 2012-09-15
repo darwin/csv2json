@@ -1,0 +1,82 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require 'optparse'
+require 'ostruct'
+require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'json2csv.rb') # this form is important for local development
+
+module JSON2CSVRunner
+
+    # command-line parsing
+    COMMAND = File.basename($0)
+    USAGE = "Usage: #{COMMAND} [INPUT] [OPTIONS]"
+
+    options = OpenStruct.new
+    options.output = "-"
+    options.separator = ","
+    options.pretty = false
+    options.headers = nil
+    options.skipFirstRow = false
+
+    opts = OptionParser.new do |o|
+        o.banner = USAGE
+        o.separator ""
+        o.separator "Specific options:"
+
+        o.on("-s", "--separator SEP", "Set separator character surrounded by single quotes (default is ',')") do |sep|
+            options.separator = sep
+        end
+
+        o.on("-o", "--output FILE", "Write output to a file") do |fn|
+            options.output = fn
+        end
+
+        o.on("-H", "--force-headers HEADERS", "Supply list of headers, and skip first row of input; use to override headers in file") do |headers|
+            if headers then
+                options.headers = headers.split(",")
+                options.skipFirstRow = true
+            end
+        end
+
+        o.on("-h", "--headers HEADERS", "Supply list of headers, where no headers exist in the file") do |headers|
+            if headers then
+                options.headers = headers.split(",")
+            end
+        end
+
+        o.on_tail("-h", "--help", "Show this message") do
+            puts o
+            exit
+        end
+
+        o.on_tail("-v", "--version", "Show version") do
+            puts CSV2JSON::VERSION
+            exit
+        end
+    end
+
+    begin
+        opts.parse!(ARGV)
+    rescue
+        raise "Unable to parse options: #{$!}"
+    end
+
+    # initialize output handle
+    if options.output == "-"
+        OUT = $stdout.clone
+    else
+        OUT = File.open(options.output, "w")
+    end
+    
+    if ARGV.size > 0
+        IN = File.read(ARGV[0])
+    else
+        IN = StringIO.new($stdin.read) # cannot be just $stdin.clone because FasterCSV is seeking in file :-(
+    end
+
+    # run the command
+    JSON2CSV.parse(IN, OUT, options.headers, nil)
+    
+    # leave in peace
+    OUT.flush
+end
