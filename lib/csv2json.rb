@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'fastercsv'
 require 'json'
-require 'csv2json-version.rb'
+require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json-version.rb')
 
 module CSV2JSON
 
