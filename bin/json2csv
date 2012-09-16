@@ -29,10 +29,9 @@ module JSON2CSVRunner
             options.output = fn
         end
 
-        o.on("-H", "--force-headers HEADERS", "Supply sorted list of headers, by which to order the columns in the CSV. These must match the key names in the JSON.") do |headers|
+        o.on("-H", "--headers HEADERS", "Supply sorted list of headers, by which to order the columns in the CSV. These must match the key names in the JSON.") do |headers|
             if headers then
                 options.headers = headers.split(",")
-                options.skipFirstRow = true
             end
         end
 

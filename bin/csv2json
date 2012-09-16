@@ -35,14 +35,13 @@ module CSV2JSONRunner
             options.pretty = true
         end
 
-        o.on("-H", "--force-headers HEADERS", "Supply list of headers, and skip first row of input; use to override headers in file") do |headers|
+        o.on("-k", "--skip-headers-from-file", "Ignore the headers (first line) in the file; use with --headers to set your own") do |headers|
             if headers then
-                options.headers = headers.split(",")
                 options.skipFirstRow = true
             end
         end
 
-        o.on("-h", "--headers HEADERS", "Supply list of headers, where no headers exist in the file") do |headers|
+        o.on("-H", "--headers HEADERS", "Supply list of headers, where no headers exist in the file, or where you're using -k to ignore them") do |headers|
             if headers then
                 options.headers = headers.split(",")
             end
