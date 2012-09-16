@@ -11,7 +11,7 @@ class TestCsv2json < Test::Unit::TestCase
                 filename_parts = File.basename(filename, ".csv").split('_')
                 json_template = filename_parts[0] + '.json'
 
-                print "Testing #{filename}\n"
+                print "Testing csv2json against #{filename}\n"
 
                 File.open(filename, "r") do |input|
                     output = StringIO.new()

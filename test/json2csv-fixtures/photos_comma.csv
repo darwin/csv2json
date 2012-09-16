@@ -1,0 +1,13 @@
+thumbpath,imgpath,imgsrc,width,height,thumbsrc,thumbwidth,thumbheight
+thumbnails/,images/,paris_01.jpg,350,262,paris_01.jpg,75,56
+thumbnails/,images/,paris_02.jpg,262,350,paris_02.jpg,75,56
+thumbnails/,images/,paris_03.jpg,350,262,paris_03.jpg,75,56
+thumbnails/,images/,paris_04.jpg,262,350,paris_04.jpg,56,75
+thumbnails/,images/,paris_05.jpg,262,350,paris_05.jpg,56,75
+thumbnails/,images/,paris_06.jpg,350,262,paris_06.jpg,75,56
+thumbnails/,images/,paris_07.jpg,262,350,paris_07.jpg,56,75
+thumbnails/,images/,paris_08.jpg,262,350,paris_08.jpg,56,75
+thumbnails/,images/,paris_09.jpg,262,350,paris_09.jpg,56,75
+thumbnails/,images/,paris_10.jpg,350,262,paris_10.jpg,75,56
+thumbnails/,images/,paris_11.jpg,350,262,paris_11.jpg,75,56
+thumbnails/,images/,paris_12.jpg,350,262,paris_12.jpg,75,56
