@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.default_executable = %q{csv2json}
   s.description = %q{handy for converting xls files to json}
   s.email = %q{antonin@hildebrand.cz}
-  s.executables = ["csv2json"]
+  s.executables = ["csv2json", "json2csv"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.md"
+    "README.md"
   ]
   s.files = [
     ".document",
@@ -25,9 +25,11 @@ Gem::Specification.new do |s|
      "README.md",
      "Rakefile",
      "bin/csv2json",
+     "bin/json2csv",
      "csv2json.gemspec",
      "lib/csv2json-version.rb",
      "lib/csv2json.rb",
+     "lib/json2csv.rb",
      "test/fixtures/addresses.json",
      "test/fixtures/addresses_comma.csv",
      "test/fixtures/addresses_pipe.csv",
@@ -41,7 +43,8 @@ Gem::Specification.new do |s|
      "test/fixtures/population_pipe.csv",
      "test/fixtures/population_semicolon.csv",
      "test/helper.rb",
-     "test/test_csv2json.rb"
+     "test/test_csv2json.rb",
+     "test/test_json2csv.rb"
   ]
   s.homepage = %q{http://github.com/darwin/csv2json}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -50,7 +53,8 @@ Gem::Specification.new do |s|
   s.summary = %q{.csv to .json converter}
   s.test_files = [
     "test/helper.rb",
-     "test/test_csv2json.rb"
+    "test/test_csv2json.rb",
+    "test/test_json2csv.rb"
   ]
 
   if s.respond_to? :specification_version then
