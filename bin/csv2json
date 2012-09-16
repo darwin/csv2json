@@ -62,7 +62,7 @@ module CSV2JSONRunner
     begin
         opts.parse!(ARGV)
     rescue
-        die "Unable to parse options: #{$!}"
+        raise "Unable to parse options: #{$!}"
     end
 
     # initialize output handle
