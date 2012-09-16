@@ -42,6 +42,10 @@ Gem::Specification.new do |s|
      "test/fixtures/population_comma.csv",
      "test/fixtures/population_pipe.csv",
      "test/fixtures/population_semicolon.csv",
+     "test/json2csv-fixtures/photos.json",
+     "test/json2csv-fixtures/photos_comma.csv",
+     "test/json2csv-fixtures/photos_pipe.csv",
+     "test/json2csv-fixtures/photos_semicolon.csv",
      "test/helper.rb",
      "test/test_csv2json.rb",
      "test/test_json2csv.rb"
