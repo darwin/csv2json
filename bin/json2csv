@@ -14,9 +14,7 @@ module JSON2CSVRunner
     options = OpenStruct.new
     options.output = "-"
     options.separator = ","
-    options.pretty = false
     options.headers = nil
-    options.skipFirstRow = false
 
     opts = OptionParser.new do |o|
         o.banner = USAGE
@@ -31,16 +29,10 @@ module JSON2CSVRunner
             options.output = fn
         end
 
-        o.on("-H", "--force-headers HEADERS", "Supply list of headers, and skip first row of input; use to override headers in file") do |headers|
+        o.on("-H", "--force-headers HEADERS", "Supply sorted list of headers, by which to order the columns in the CSV. These must match the key names in the JSON.") do |headers|
             if headers then
                 options.headers = headers.split(",")
                 options.skipFirstRow = true
-            end
-        end
-
-        o.on("-h", "--headers HEADERS", "Supply list of headers, where no headers exist in the file") do |headers|
-            if headers then
-                options.headers = headers.split(",")
             end
         end
 
@@ -75,7 +67,7 @@ module JSON2CSVRunner
     end
 
     # run the command
-    JSON2CSV.parse(IN, OUT, options.headers, nil)
+    JSON2CSV.parse(IN, OUT, options.headers, {:col_sep => options.separator})
     
     # leave in peace
     OUT.flush
