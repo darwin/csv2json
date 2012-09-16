@@ -3,9 +3,9 @@
 require "rubygems"
 require 'optparse'
 require 'ostruct'
-require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json.rb') # this form is important for local development
+require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'json2csv.rb') # this form is important for local development
 
-module CSV2JSONRunner
+module JSON2CSVRunner
 
     # command-line parsing
     COMMAND = File.basename($0)
@@ -14,9 +14,7 @@ module CSV2JSONRunner
     options = OpenStruct.new
     options.output = "-"
     options.separator = ","
-    options.pretty = false
     options.headers = nil
-    options.skipFirstRow = false
 
     opts = OptionParser.new do |o|
         o.banner = USAGE
@@ -31,17 +29,7 @@ module CSV2JSONRunner
             options.output = fn
         end
 
-        o.on("-p", "--pretty", "Pretty-format JSON output") do 
-            options.pretty = true
-        end
-
-        o.on("-k", "--skip-headers-from-file", "Ignore the headers (first line) in the file; use with --headers to set your own") do |headers|
-            if headers then
-                options.skipFirstRow = true
-            end
-        end
-
-        o.on("-H", "--headers HEADERS", "Supply list of headers, where no headers exist in the file, or where you're using -k to ignore them") do |headers|
+        o.on("-H", "--headers HEADERS", "Supply sorted list of headers, by which to order the columns in the CSV. These must match the key names in the JSON.") do |headers|
             if headers then
                 options.headers = headers.split(",")
             end
@@ -72,13 +60,13 @@ module CSV2JSONRunner
     end
     
     if ARGV.size > 0
-        IN = File.open(ARGV[0], "r")
+        IN = File.read(ARGV[0])
     else
         IN = StringIO.new($stdin.read) # cannot be just $stdin.clone because FasterCSV is seeking in file :-(
     end
-    
+
     # run the command
-    CSV2JSON.parse(IN, OUT, options.headers, {:col_sep => options.separator}, {:pretty => options.pretty, :skipFirstRow => options.skipFirstRow})
+    JSON2CSV.parse(IN, OUT, options.headers, {:col_sep => options.separator})
     
     # leave in peace
     OUT.flush

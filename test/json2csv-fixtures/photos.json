@@ -1,0 +1,122 @@
+[
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_01.jpg",
+    "thumbsrc": "paris_01.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_02.jpg",
+    "thumbsrc": "paris_02.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_03.jpg",
+    "thumbsrc": "paris_03.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  },
+  {
+    "thumbwidth": 56,
+    "imgsrc": "paris_04.jpg",
+    "thumbsrc": "paris_04.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 75,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  },
+  {
+    "thumbwidth": 56,
+    "imgsrc": "paris_05.jpg",
+    "thumbsrc": "paris_05.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 75,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_06.jpg",
+    "thumbsrc": "paris_06.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  },
+  {
+    "thumbwidth": 56,
+    "imgsrc": "paris_07.jpg",
+    "thumbsrc": "paris_07.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 75,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  },
+  {
+    "thumbwidth": 56,
+    "imgsrc": "paris_08.jpg",
+    "thumbsrc": "paris_08.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 75,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  },
+  {
+    "thumbwidth": 56,
+    "imgsrc": "paris_09.jpg",
+    "thumbsrc": "paris_09.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 75,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_10.jpg",
+    "thumbsrc": "paris_10.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_11.jpg",
+    "thumbsrc": "paris_11.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_12.jpg",
+    "thumbsrc": "paris_12.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  }
+]
