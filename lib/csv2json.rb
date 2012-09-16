@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'fastercsv'
 require 'json'
+require 'orderedhash'
 require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json-version.rb')
 
 module CSV2JSON
@@ -28,7 +29,7 @@ module CSV2JSON
             end
             
             # build JSON snippet and append it to the result
-            snippet = Hash.new
+            snippet = OrderedHash.new
             headers.each_index { |i| snippet[headers[i]] = self.convert(row[i]) }
             result << snippet
         end
