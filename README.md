@@ -6,12 +6,12 @@ Tried to google for solution and surprisingly enough nothing solid existed.
 ## Solution
 
 - export XLS as a CSV file (I use OpenOffice.org for this)
-- run `csv2json file.csv > file.json`
+- run `csv2json file.csv > file.json` (or `json2csv file.json > file.csv`)
 - there is no step 3
 
 ### Sample
 
-note: make sure your XLS table has the first row with column names
+note: make sure your XLS table has the first row with column names, or use the -H option to provide some
 
 This CSV file:
 
@@ -50,13 +50,30 @@ gets turned into this JSON:
 
 ### Usage
 
-    Usage: csv2json [INPUT] [OPTIONS]
+Usage: csv2json [INPUT] [OPTIONS]
 
     Specific options:
         -s, --separator SEP              Set separator character surrounded by single quotes (default is ',')
         -o, --output FILE                Write output to a file
+        -p, --pretty                     Pretty-format JSON output
+        -k, --skip-headers-from-file     Ignore the headers (first line) in the file; use with --headers to set your own
+        -H, --headers HEADERS            Supply list of headers, where no headers exist in the file, or where you're using -k to ignore them
         -h, --help                       Show this message
         -v, --version                    Show version
+
+We also provide `json2csv`, which converts in the opposite direction.
+
+    Usage: json2csv [INPUT] [OPTIONS]
+
+    Specific options:
+        -s, --separator SEP              Set separator character surrounded by single quotes (default is ',')
+        -o, --output FILE                Write output to a file
+        -H, --headers HEADERS            Supply sorted list of headers, by which to order the columns in the CSV. These must match the key names in the JSON.
+        -h, --help                       Show this message
+        -v, --version                    Show version
+
+
+Note: JSON field order is explicitly unsorted, so if you want predictable field order for CSV output, use the -H option.
 
 ### Alternative usage
 
