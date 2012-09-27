@@ -19,7 +19,7 @@ class TestCsv2json < Test::Unit::TestCase
                     template = File.read(json_template)
 
                     output.pos = 0
-                    assert "Content doesn't match", template == output.read
+                    assert JSON.parse(template) == JSON.parse(output.read), "Content doesn't match"
                 end
             end
         end

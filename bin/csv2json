@@ -74,7 +74,7 @@ module CSV2JSONRunner
     if ARGV.size > 0
         IN = File.open(ARGV[0], "r")
     else
-        IN = StringIO.new($stdin.read) # cannot be just $stdin.clone because FasterCSV is seeking in file :-(
+        IN = StringIO.new($stdin.read) # cannot be just $stdin.clone because CSV is seeking in file :-(
     end
     
     # run the command

@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'fastercsv'
+require 'csv'
 require 'json'
 require 'orderedhash'
 require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json-version.rb')
@@ -16,7 +16,7 @@ module CSV2JSON
     def parse(input, output, headers=nil, csvOptions={}, gemOptions={})
         result = Array.new
 
-        FasterCSV.new(input, csvOptions).each do |row|
+        CSV.new(input, csvOptions).each do |row|
             # treat first row as headers if the caller didn't provide them
             unless headers 
                 headers = row

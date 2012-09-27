@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'fastercsv'
+require 'csv'
 require 'json'
 require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'csv2json-version.rb')
 
@@ -12,7 +12,7 @@ module JSON2CSV
             headers = json[0].keys
         end
 
-        outputCSV = FasterCSV.generate(csvOptions) do |csv|
+        outputCSV = CSV.generate(csvOptions) do |csv|
             csv << headers
 
             json.each do |obj|
