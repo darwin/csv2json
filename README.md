@@ -1,7 +1,6 @@
 # csv2json
 
-Clients were sending me XLS files, but my webs consume JSON. So I needed to convert them to JSON easily from command-line. 
-Tried to google for solution and surprisingly enough nothing solid existed.
+Clients were sending me XLS files but my webs consume JSONs. So I needed to convert them to JSON easily from command-line...
 
 ## Solution
 
@@ -46,7 +45,7 @@ gets turned into this JSON:
 
 ### Installation
 
-`sudo gem install csv2json --source http://rubygems.org`
+`sudo gem install csv2json`
 
 ### Usage
 
@@ -108,16 +107,4 @@ or in-memory
 
 ## Authors
 
-* **Antonin Hildebrand** ([http://binaryage.com](http://binaryage.com))
-* **Rafael Souza** ([http://github.com/rafaels](http://github.com/rafaels))
-
----
-
-## Want to contribute?
-
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+[https://github.com/darwin/csv2json/graphs/contributors](https://github.com/darwin/csv2json/graphs/contributors)
