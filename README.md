@@ -19,29 +19,30 @@ This CSV file:
     thumbnails/,images/,paris_02.jpg,262,350,paris_02.jpg,75,56
     
 gets turned into this JSON: 
-
-    [
-      {
-        "thumbwidth": 75,
-        "imgsrc": "paris_01.jpg",
-        "thumbsrc": "paris_01.jpg",
-        "height": 262,
-        "imgpath": "images/",
-        "thumbheight": 56,
-        "thumbpath": "thumbnails/",
-        "width": 350
-      },
-      {
-        "thumbwidth": 75,
-        "imgsrc": "paris_02.jpg",
-        "thumbsrc": "paris_02.jpg",
-        "height": 350,
-        "imgpath": "images/",
-        "thumbheight": 56,
-        "thumbpath": "thumbnails/",
-        "width": 262
-      }
-    ]
+```json
+[
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_01.jpg",
+    "thumbsrc": "paris_01.jpg",
+    "height": 262,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 350
+  },
+  {
+    "thumbwidth": 75,
+    "imgsrc": "paris_02.jpg",
+    "thumbsrc": "paris_02.jpg",
+    "height": 350,
+    "imgpath": "images/",
+    "thumbheight": 56,
+    "thumbpath": "thumbnails/",
+    "width": 262
+  }
+]
+```
 
 ### Installation
 
