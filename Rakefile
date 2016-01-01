@@ -1,25 +1,6 @@
-require 'rubygems'
+require 'bundler/gem_tasks'
 require 'rake'
 require File.join(File.expand_path(File.dirname(__FILE__)), 'lib', 'csv2json-version.rb')
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.version = CSV2JSON::VERSION
-    gem.name = "csv2json"
-    gem.summary = %Q{.csv to .json converter}
-    gem.description = %Q{handy for converting xls files to json}
-    gem.email = "antonin@hildebrand.cz"
-    gem.homepage = "http://github.com/darwin/csv2json"
-    gem.authors = ["Antonin Hildebrand", "Rafael Souza"]
-    gem.add_dependency "json"
-    gem.add_development_dependency "shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
@@ -40,8 +21,6 @@ rescue LoadError
     abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
   end
 end
-
-task :test => :check_dependencies
 
 task :default => :test
 
