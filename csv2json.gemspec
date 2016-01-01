@@ -57,15 +57,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rake>, [">= 0"])
+      s.add_development_dependency(%q<test-unit>, ["1.2.3"])
     else
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rake>, [">= 0"])
+      s.add_dependency(%q<test-unit>, ["1.2.3"])
     end
   else
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rake>, [">= 0"])
+    s.add_dependency(%q<test-unit>, ["1.2.3"])
   end
 end
 
